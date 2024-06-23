@@ -12,9 +12,9 @@ WORKDIR /var/www/html/
 RUN git clone https://github.com/ReInHerit/SmartLens-app
 RUN git clone https://github.com/mathyptr/smartlens-docker.git
 #RUN mv /home/mathy/SmartLens-app /var/www/html/
-RUN mysql -e "CREATE DATABASE smartlensv"
-RUN mysql -e "CREATE USER 'smartlens'@'localhost' IDENTIFIED BY '!smartlens!'"
-RUN mysql mysql -e "GRANT ALL ON smartlens TO 'smartlens'@'localhost'"
-RUN mysql smartlens < smartlens_db_dump.sql
+RUN mysql -h localhost -P 3306 --protocol=tcp -e "CREATE DATABASE smartlensv"
+RUN mysql -h localhost -P 3306 --protocol=tcp -e "CREATE USER 'smartlens'@'localhost' IDENTIFIED BY '!smartlens!'"
+RUN mysql -h localhost -P 3306 --protocol=tcp mysql -e "GRANT ALL ON smartlens TO 'smartlens'@'localhost'"
+RUN mysql -h localhost -P 3306 --protocol=tcp smartlens < smartlens_db_dump.sql
 #RUN mysql smartlens < /home/mathy/smartlens_db_dump.sql
 #WORKDIR /var/www/html/
