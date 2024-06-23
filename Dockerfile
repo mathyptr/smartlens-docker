@@ -11,10 +11,7 @@ RUN mkdir /home/mathy/
 WORKDIR /var/www/html/
 #CMD apachectl -D FOREGROUND
 RUN git clone https://github.com/ReInHerit/SmartLens-app
-RUN mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '1mathy1'"
 
-#RUN mysqluser=root \
-#&& strpw=1mathy1 
 RUN mysql -e "CREATE DATABASE smartlensv"
 RUN mysql -e "CREATE USER 'smartlens'@'localhost' IDENTIFIED BY '!smartlens!'"
 RUN mysql mysql -e "GRANT ALL ON smartlens TO 'smartlens'@'localhost'"
