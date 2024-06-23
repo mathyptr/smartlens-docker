@@ -1,5 +1,5 @@
 FROM ubuntu
-#LABEL Custom object detection in the browser using TensorFlow.js We- Mathilde Patrissi Universit‡ di Firenze
+#LABEL Custom object detection in the browser using TensorFlow.js We- Mathilde Patrissi Universit√† di Firenze
 RUN apt-get update	
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata git wget vim net-tools apache2 php php-mysql libapache2-mod-php mysql-server 
 
@@ -8,7 +8,7 @@ RUN apt-get -y install mysql-server
 RUN service mysql start \  
 && mysql -uroot -p1mathy1 < /home/Mathy/ServerWeb/doc/tipsitPerson.sql 
 #EXPOSE 80
-%RUN mkdir /home/mathy/
+RUN mkdir /home/mathy/
 WORKDIR /var/www/html/
 #CMD apachectl -D FOREGROUND
 RUN git clone https://github.com/ReInHerit/SmartLens-app
