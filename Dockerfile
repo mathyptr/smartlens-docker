@@ -1,9 +1,8 @@
 FROM ubuntu
 #LABEL Custom object detection in the browser using TensorFlow.js We- Mathilde Patrissi Università di Firenze
-RUN apt-get update	
+RUN apt-get update
+RUN apt-get remove mysql-server
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata git wget vim net-tools apache2 php php-mysql libapache2-mod-php mysql-server 
-
-RUN apt-get -y install mysql-server 
 
 RUN service mysql start
 #EXPOSE 80
