@@ -5,8 +5,7 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata git wget vim net-
 
 RUN apt-get -y install mysql-server 
 
-RUN service mysql start \  
-&& mysql -uroot -p1mathy1 < /home/Mathy/ServerWeb/doc/tipsitPerson.sql 
+RUN service mysql start
 #EXPOSE 80
 RUN mkdir /home/mathy/
 WORKDIR /var/www/html/
