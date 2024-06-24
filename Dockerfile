@@ -20,6 +20,6 @@ RUN service mysql start \
 && mysql mysql -e "GRANT ALL ON smartlens.* TO 'smartlens'@'localhost'" \
 && mysql smartlens < /home/mathy/smartlens-docker/smartlens_db_dump.sql
 RUN sed -i 's/localhost/127.0.0.1/g' /var/www/html/SmartLens-app/server/config.php
-RUN sed -i 's/Listen 80/Listen 10000/g' /etc/apache2/ports.conf
+RUN sed -i 's/Listen 80/Listen 10080/g' /etc/apache2/ports.conf
 
 ENTRYPOINT service mysql start && service apache2 start  && /bin/bash
