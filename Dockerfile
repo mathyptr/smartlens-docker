@@ -23,3 +23,4 @@ RUN sed -i 's/localhost/127.0.0.1/g' /var/www/html/SmartLens-app/server/config.p
 RUN sed -i 's/Listen 80/Listen 10000/g' /etc/apache2/ports.conf
 
 #ENTRYPOINT service mysql start && service apache2 start  && /bin/bash
+CMD service apache2 start
