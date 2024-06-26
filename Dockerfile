@@ -21,6 +21,6 @@ RUN service mysql start \
 && mysql smartlens < /home/mathy/smartlens-docker/smartlens_db_dump.sql
 RUN sed -i 's/localhost/127.0.0.1/g' /var/www/html/SmartLens-app/server/config.php
 RUN sed -i 's/Listen 80/Listen 0.0.0.0:10000/g' /etc/apache2/ports.conf
-RUN systemctl enable mysql
+RUN sysctl enable mysql
 #ENTRYPOINT service mysql start && service apache2 start  && /bin/bash
 CMD ["apachectl", "-D", "FOREGROUND"]
