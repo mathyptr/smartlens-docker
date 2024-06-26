@@ -24,4 +24,4 @@ RUN sed -i 's/Listen 80/Listen 0.0.0.0:10000/g' /etc/apache2/ports.conf
 #CMD ["apachectl", "-D", "FOREGROUND"]
 #CMD service mysql start && service apache2 start  && /bin/bash
 #CMD service mysql start && service apache2 start  && /bin/bash
-CMD [start.sh]
+CMD [./smartlens-docker/start.sh]
