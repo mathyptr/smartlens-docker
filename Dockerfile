@@ -8,11 +8,9 @@ RUN mkdir /home/mathy/
 WORKDIR /home/mathy/
 #CMD apachectl -D FOREGROUND
 RUN git clone https://github.com/ReInHerit/SmartLens-app.git
-RUN git clone https://github.com/mathyptr/smartlens-docker.git
 RUN cp -r SmartLens-app /var/www/html/
-#RUN mysqluser=root \
-#&& strpw=1mathy1 
-
+RUN git clone https://github.com/mathyptr/smartlens-docker.git
+RUN chmod u+x start.sh
 RUN service mysql start \
 && mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '1mathy1'" \
 && mysql -e "CREATE DATABASE smartlens" \
@@ -26,3 +24,4 @@ RUN sed -i 's/Listen 80/Listen 0.0.0.0:10000/g' /etc/apache2/ports.conf
 #CMD ["apachectl", "-D", "FOREGROUND"]
 #CMD service mysql start && service apache2 start  && /bin/bash
 #CMD service mysql start && service apache2 start  && /bin/bash
+CMD [start.sh]
