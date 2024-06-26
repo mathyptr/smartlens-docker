@@ -24,4 +24,9 @@ RUN sed -i 's/Listen 80/Listen 0.0.0.0:10000/g' /etc/apache2/ports.conf
 #CMD ["apachectl", "-D", "FOREGROUND"]
 #CMD service mysql start && service apache2 start  && /bin/bash
 #CMD service mysql start && service apache2 start  && /bin/bash
-CMD [./smartlens-docker/start.sh]
+#CMD [./smartlens-docker/start.sh]
+RUN echo "usermod -d /var/lib/mysql/ mysql" >  /home/mathy/smartlens-docker/start.sh \
+&& echo "service mysql start " >>  /home/mathy/smartlens-docker/start.sh \
+&& echo "apachectl -D FOREGROUND" >>  /home/mathy/smartlens-docker/start.sh \
+&& chmod u+x /home/mathy/smartlens-docker/start.sh 
+CMD /home/mathy/smartlens-docker/start.sh
