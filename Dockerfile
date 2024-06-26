@@ -10,7 +10,7 @@ WORKDIR /home/mathy/
 RUN git clone https://github.com/ReInHerit/SmartLens-app.git
 RUN cp -r SmartLens-app /var/www/html/
 RUN git clone https://github.com/mathyptr/smartlens-docker.git
-RUN chmod u+x start.sh
+RUN chmod u+x ./smartlens-docker/start.sh
 RUN service mysql start \
 && mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '1mathy1'" \
 && mysql -e "CREATE DATABASE smartlens" \
