@@ -7,7 +7,7 @@ RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata git wget vim net-
 RUN mkdir /home/mathy/
 WORKDIR /home/mathy/
 #CMD apachectl -D FOREGROUND
-RUN git clone https://github.com/ReInHerit/SmartLens-app.git
+RUN git clone https://github.com/mathyptr/SmartLens-app.git
 RUN cp -r SmartLens-app /var/www/html/
 RUN git clone https://github.com/mathyptr/smartlens-docker.git
 RUN chmod u+x ./smartlens-docker/start.sh
