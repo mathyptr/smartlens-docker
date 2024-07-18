@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Lug 17, 2024 alle 18:09
+-- Creato il: Lug 18, 2024 alle 17:56
 -- Versione del server: 10.4.22-MariaDB
 -- Versione PHP: 8.1.1
 
@@ -32,17 +32,43 @@ CREATE TABLE `artworks` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
   `author` varchar(100) NOT NULL,
-  `description` text NOT NULL
+  `description` text NOT NULL,
+  `imgsrc` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dump dei dati per la tabella `artworks`
 --
 
-INSERT INTO `artworks` (`id`, `title`, `author`, `description`) VALUES
-(1, 'Venere', 'Sandro Botticelli', 'Nota come “Nascita di Venere”, la composizione raffigura più precisamente l’approdo sull’isola di Cipro della dea dell’amore e della bellezza, nata dalla spuma del mare e sospinta dai venti Zefiro e, forse, Aura. La dea è in piedi sopra la valva di una conchiglia, pura e perfetta come una perla. L’accoglie una giovane donna, identificata talvolta con una delle Grazie oppure con l’Ora della primavera, che le porge un manto cosparso di fiori; alla stagione primaverile rimandano anche le rose portate dai venti. Il tema del dipinto, che celebra Venere come simbolo di amore e bellezza, fu forse suggerito dal poeta Agnolo Poliziano.\r\n\r\nE’ molto probabile che il committente dell’opera sia da ricercarsi all’interno della casata dei Medici, sebbene non si abbiano notizie del dipinto prima del 1550, quando Giorgio Vasari lo descrive nella villa medicea di Castello, proprietà del ramo cadetto della famiglia Medici fin dalla metà del XV secolo. Avvalora questa ipotesi anche la raffigurazione degli alberi di aranci, considerati un emblema mediceo per l’assonanza fra il nome della famiglia e quello con cui queste piante erano note, ‘mala medica’.\r\n\r\nDiversamente dalla “Primavera”, dipinto su tavola, la “Nascita di Venere” fu realizzato su tela, un supporto non di rado impiegato nel Quattrocento per pitture decorative destinate alle residenze signorili.\r\n\r\nBotticelli prende ispirazione da statue di epoca classica per l’atteggiamento pudico di Venere, che copre la nudità con i lunghi capelli biondi, i cui riflessi di luce sono ottenuti tramite l’applicazione di oro; anche la coppia dei Venti che vola abbracciata è una citazione da un’opera antica, una gemma di età ellenistica posseduta da Lorenzo il Magnifico.'),
-(2, 'I duchi di Urbino Federico da Montefeltro e Battista Sforza', 'Piero Della Francesca', 'Fra i più celebri ritratti del Rinascimento italiano, il dittico raffigura i signori di Urbino, Federico da Montefeltro (1422-1482) e sua moglie Battista Sforza (1446-1472). In accordo con la tradizione quattrocentesca, ispirata alla numismatica antica, le due figure sono rappresentate di profilo, taglio che garantiva una notevole verosimiglianza e precisione nella resa dei particolari, senza che trasparissero gli stati d’animo: i duchi di Urbino appaiono infatti immuni da turbamenti e emozioni. I coniugi sono affrontati e l’unità spaziale è suggerita dalla luce e dalla continuità del paesaggio collinare sullo sfondo – il paesaggio marchigiano su cui i Montefeltro regnavano. Spicca il contrasto cromatico fra l’incarnato abbronzato di Federico e quello chiarissimo di Battista Sforza, pallore che, oltre a rispettare le convenzioni estetiche in voga nel Rinascimento, potrebbe alludere alla precoce scomparsa della duchessa, morta giovanissima nel 1472. Sul retro delle tavole, i duchi sono effigiati mentre vengono portati in trionfo su carri, accompagnati dalla Virtù cristiane; le iscrizioni latine inneggiano ai valori morali della coppia. La presenza delle pitture sul verso induce a ritenere che i due dipinti, ora inseriti in una cornice moderna, potessero costituire in origine un dittico.\r\n\r\nOpera tra le più famose di Piero della Francesca, il doppio ritratto si inserisce nell’ambito di consolidato rapporto fra il pittore e i duchi di Montefeltro, alla cui corte Piero soggiornò ripetutamente, trovandosi a contatto con un ambiente colto, raffinato, che in breve tempo divenne uno dei più importanti centri culturali e artistici italiani. Il maestro concilia la rigorosa impostazione prospettica appresa durante la formazione fiorentina con la lenticolare rappresentazione della natura propria della pittura fiamminga, raggiungendo risultati di straordinaria e ineguagliata originalità.'),
-(3, 'Annunciazione', 'Leonardo da Vinci', 'Davanti ad un palazzo rinascimentale, in un rigoglioso giardino recintato che evoca l’hortus conclusus allusivo alla purezza di Maria, l’Arcangelo Gabriele si inginocchia davanti alla Vergine rivolgendole il saluto ed offrendole un giglio. La Vergine risponde, seduta con grande dignità davanti a un leggio sul quale è poggiato un libro. Il tradizionale tema sacro è collocato da Leonardo in un’ambientazione naturalistica e terrena: l’angelo ha una corporeità concreta, suggerita dall’ombra proiettata sul prato e dalla resa dei panneggi che presuppongono studi dal vero. Anche le sue ali prendono ispirazione da quelle di qualche poderoso rapace. E’ straordinaria la resa della luce crepuscolare che plasma le forme, unifica la scena e fa risaltare le sagome scure degli alberi sul lontano paesaggio dello sfondo, dominato dai toni sfumati cari all’artista. Gli elementi architettonici sono disegnati secondo le regole della prospettiva con punto di fuga centrale, ma alcune anomalie riscontrabili nella figura della Vergine, il cui braccio destro appare eccessivamente lungo, potrebbero rispecchiare precoci ricerche di ottica da parte di Leonardo, che avrebbe tenuto conto del punto di vista laterale (da destra) e ribassato determinato dalla collocazione originale della tavola dipinta, cioè sopra un altare laterale di una chiesa.\r\n\r\nPervenuto agli Uffizi nel 1867 dalla sagrestia della chiesa di San Bartolomeo a Monteoliveto fuori porta San Frediano a Firenze, del dipinto non si conoscono né la collocazione originaria, né la committenza. L’Annunciazione è largamente ritenuta un’opera giovanile di Leonardo da Vinci, eseguita quando il maestro era ancora nella bottega di Andrea del Verrocchio. Imita un’invenzione del Verrocchio la foggia del leggio, ispirata al sarcofago di Piero il Gottoso nella chiesa di San Lorenzo a Firenze.');
+INSERT INTO `artworks` (`id`, `title`, `author`, `description`, `imgsrc`) VALUES
+(1, 'Venere', 'Sandro Botticelli', 'Nota come “Nascita di Venere”, la composizione raffigura più precisamente l’approdo sull’isola di Cipro della dea dell’amore e della bellezza, nata dalla spuma del mare e sospinta dai venti Zefiro e, forse, Aura. La dea è in piedi sopra la valva di una conchiglia, pura e perfetta come una perla. L’accoglie una giovane donna, identificata talvolta con una delle Grazie oppure con l’Ora della primavera, che le porge un manto cosparso di fiori; alla stagione primaverile rimandano anche le rose portate dai venti. Il tema del dipinto, che celebra Venere come simbolo di amore e bellezza, fu forse suggerito dal poeta Agnolo Poliziano.\r\n\r\nE’ molto probabile che il committente dell’opera sia da ricercarsi all’interno della casata dei Medici, sebbene non si abbiano notizie del dipinto prima del 1550, quando Giorgio Vasari lo descrive nella villa medicea di Castello, proprietà del ramo cadetto della famiglia Medici fin dalla metà del XV secolo. Avvalora questa ipotesi anche la raffigurazione degli alberi di aranci, considerati un emblema mediceo per l’assonanza fra il nome della famiglia e quello con cui queste piante erano note, ‘mala medica’.\r\n\r\nDiversamente dalla “Primavera”, dipinto su tavola, la “Nascita di Venere” fu realizzato su tela, un supporto non di rado impiegato nel Quattrocento per pitture decorative destinate alle residenze signorili.\r\n\r\nBotticelli prende ispirazione da statue di epoca classica per l’atteggiamento pudico di Venere, che copre la nudità con i lunghi capelli biondi, i cui riflessi di luce sono ottenuti tramite l’applicazione di oro; anche la coppia dei Venti che vola abbracciata è una citazione da un’opera antica, una gemma di età ellenistica posseduta da Lorenzo il Magnifico.', './images/Venere_botticelli.jpg'),
+(2, 'I duchi di Urbino Federico da Montefeltro e Battista Sforza', 'Piero Della Francesca', 'Fra i più celebri ritratti del Rinascimento italiano, il dittico raffigura i signori di Urbino, Federico da Montefeltro (1422-1482) e sua moglie Battista Sforza (1446-1472). In accordo con la tradizione quattrocentesca, ispirata alla numismatica antica, le due figure sono rappresentate di profilo, taglio che garantiva una notevole verosimiglianza e precisione nella resa dei particolari, senza che trasparissero gli stati d’animo: i duchi di Urbino appaiono infatti immuni da turbamenti e emozioni. I coniugi sono affrontati e l’unità spaziale è suggerita dalla luce e dalla continuità del paesaggio collinare sullo sfondo – il paesaggio marchigiano su cui i Montefeltro regnavano. Spicca il contrasto cromatico fra l’incarnato abbronzato di Federico e quello chiarissimo di Battista Sforza, pallore che, oltre a rispettare le convenzioni estetiche in voga nel Rinascimento, potrebbe alludere alla precoce scomparsa della duchessa, morta giovanissima nel 1472. Sul retro delle tavole, i duchi sono effigiati mentre vengono portati in trionfo su carri, accompagnati dalla Virtù cristiane; le iscrizioni latine inneggiano ai valori morali della coppia. La presenza delle pitture sul verso induce a ritenere che i due dipinti, ora inseriti in una cornice moderna, potessero costituire in origine un dittico.\r\n\r\nOpera tra le più famose di Piero della Francesca, il doppio ritratto si inserisce nell’ambito di consolidato rapporto fra il pittore e i duchi di Montefeltro, alla cui corte Piero soggiornò ripetutamente, trovandosi a contatto con un ambiente colto, raffinato, che in breve tempo divenne uno dei più importanti centri culturali e artistici italiani. Il maestro concilia la rigorosa impostazione prospettica appresa durante la formazione fiorentina con la lenticolare rappresentazione della natura propria della pittura fiamminga, raggiungendo risultati di straordinaria e ineguagliata originalità.', './images/Duchi_Urbino.jpg'),
+(3, 'Annunciazione', 'Leonardo da Vinci', 'Davanti ad un palazzo rinascimentale, in un rigoglioso giardino recintato che evoca l’hortus conclusus allusivo alla purezza di Maria, l’Arcangelo Gabriele si inginocchia davanti alla Vergine rivolgendole il saluto ed offrendole un giglio. La Vergine risponde, seduta con grande dignità davanti a un leggio sul quale è poggiato un libro. Il tradizionale tema sacro è collocato da Leonardo in un’ambientazione naturalistica e terrena: l’angelo ha una corporeità concreta, suggerita dall’ombra proiettata sul prato e dalla resa dei panneggi che presuppongono studi dal vero. Anche le sue ali prendono ispirazione da quelle di qualche poderoso rapace. E’ straordinaria la resa della luce crepuscolare che plasma le forme, unifica la scena e fa risaltare le sagome scure degli alberi sul lontano paesaggio dello sfondo, dominato dai toni sfumati cari all’artista. Gli elementi architettonici sono disegnati secondo le regole della prospettiva con punto di fuga centrale, ma alcune anomalie riscontrabili nella figura della Vergine, il cui braccio destro appare eccessivamente lungo, potrebbero rispecchiare precoci ricerche di ottica da parte di Leonardo, che avrebbe tenuto conto del punto di vista laterale (da destra) e ribassato determinato dalla collocazione originale della tavola dipinta, cioè sopra un altare laterale di una chiesa.\r\n\r\nPervenuto agli Uffizi nel 1867 dalla sagrestia della chiesa di San Bartolomeo a Monteoliveto fuori porta San Frediano a Firenze, del dipinto non si conoscono né la collocazione originaria, né la committenza. L’Annunciazione è largamente ritenuta un’opera giovanile di Leonardo da Vinci, eseguita quando il maestro era ancora nella bottega di Andrea del Verrocchio. Imita un’invenzione del Verrocchio la foggia del leggio, ispirata al sarcofago di Piero il Gottoso nella chiesa di San Lorenzo a Firenze.', './images/Annunciazione.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `details`
+--
+
+DROP TABLE IF EXISTS `details`;
+CREATE TABLE `details` (
+  `id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `description` text NOT NULL,
+  `artwork` int(11) NOT NULL,
+  `imgsrc` varchar(200) DEFAULT NULL,
+  `confidence` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `details`
+--
+
+INSERT INTO `details` (`id`, `title`, `description`, `artwork`, `imgsrc`, `confidence`) VALUES
+(1, 'Venere', 'Nella Nascita di Venere di Botticelli, la dea appare in tutta la sua grazia. È a figura intera, al centro del dipinto, nuda, con la pelle d’avorio e il corpo attraversato da ombre appena accennate. La mano destra appoggiata al seno con gesto pudìco, la mano sinistra sul pube trattiene una ciocca dei capelli lunghissimi mossi dal vento. La testa leggermente reclinata, l’espressione del volto dolce e mite.\r\nIn equilibrio è posta sul bordo di una conchiglia che la conduce fino all’approdo sull’isola di Cipro.\r\nNella stessa figura coesistono moto e quiete: al corpo statuario e alla posa stante fanno da contrappunto i capelli che ondeggiano in mille ciocche dorate, la delicata conchiglia che si muove spinta dal vento e dalle onde diventa un solido appoggio sotto ai suoi piedi.\r\nIl contrasto con il verde e l’azzurro dello sfondo esalta la sua apparizione.  ', 1, './images/VenereDet.jpg', 0.65),
+(2, 'Zefiro', 'Nell’angolo a sinistra della Nascita di Venere di Botticelli due venti dalle sembianze umane volano allacciati l’uno all’altra, le ali spiegate e i pochi panneggi ondeggianti. Soffiano con forza verso la dea lasciandoci intuire la direzione del moto. Sono Zefiro e Aura, un vento fresco e fecondo che si lascia abbracciare da uno tiepido e avvolgente.\r\nIl moto che parte da queste due figure si manifesta nell’increspatura sottile delle onde e nel vortice di fiori che li circonda.  ', 1, './images/ZefiroDet.jpg', 0.65),
+(3, 'Ora', 'A destra, sulla costa frastagliata dell’isola accorre l’Ora della primavera.\r\nIl suo vestito chiaro, trapuntato di fiordalisi, è stretto in vita da un ramo di rosa. Il mantello rosso che porge alla dea è decorato con primule e rametti di mirto e si gonfia per effetto del soffio che giunge dal lato opposto.       ', 1, './images/OraDet.jpg', 0.65);
 
 -- --------------------------------------------------------
 
@@ -494,6 +520,13 @@ ALTER TABLE `artworks`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indici per le tabelle `details`
+--
+ALTER TABLE `details`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `detail_fk` (`artwork`);
+
+--
 -- Indici per le tabelle `details5descriptors_en`
 --
 ALTER TABLE `details5descriptors_en`
@@ -558,8 +591,20 @@ ALTER TABLE `artworks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT per la tabella `details`
+--
+ALTER TABLE `details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- Limiti per le tabelle scaricate
 --
+
+--
+-- Limiti per la tabella `details`
+--
+ALTER TABLE `details`
+  ADD CONSTRAINT `detail_fk` FOREIGN KEY (`artwork`) REFERENCES `artworks` (`id`);
 
 --
 -- Limiti per la tabella `details_en`
