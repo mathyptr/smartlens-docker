@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Lug 18, 2024 alle 17:56
+-- Creato il: Lug 19, 2024 alle 11:26
 -- Versione del server: 10.4.22-MariaDB
 -- Versione PHP: 8.1.1
 
@@ -68,7 +68,11 @@ CREATE TABLE `details` (
 INSERT INTO `details` (`id`, `title`, `description`, `artwork`, `imgsrc`, `confidence`) VALUES
 (1, 'Venere', 'Nella Nascita di Venere di Botticelli, la dea appare in tutta la sua grazia. È a figura intera, al centro del dipinto, nuda, con la pelle d’avorio e il corpo attraversato da ombre appena accennate. La mano destra appoggiata al seno con gesto pudìco, la mano sinistra sul pube trattiene una ciocca dei capelli lunghissimi mossi dal vento. La testa leggermente reclinata, l’espressione del volto dolce e mite.\r\nIn equilibrio è posta sul bordo di una conchiglia che la conduce fino all’approdo sull’isola di Cipro.\r\nNella stessa figura coesistono moto e quiete: al corpo statuario e alla posa stante fanno da contrappunto i capelli che ondeggiano in mille ciocche dorate, la delicata conchiglia che si muove spinta dal vento e dalle onde diventa un solido appoggio sotto ai suoi piedi.\r\nIl contrasto con il verde e l’azzurro dello sfondo esalta la sua apparizione.  ', 1, './images/VenereDet.jpg', 0.65),
 (2, 'Zefiro', 'Nell’angolo a sinistra della Nascita di Venere di Botticelli due venti dalle sembianze umane volano allacciati l’uno all’altra, le ali spiegate e i pochi panneggi ondeggianti. Soffiano con forza verso la dea lasciandoci intuire la direzione del moto. Sono Zefiro e Aura, un vento fresco e fecondo che si lascia abbracciare da uno tiepido e avvolgente.\r\nIl moto che parte da queste due figure si manifesta nell’increspatura sottile delle onde e nel vortice di fiori che li circonda.  ', 1, './images/ZefiroDet.jpg', 0.65),
-(3, 'Ora', 'A destra, sulla costa frastagliata dell’isola accorre l’Ora della primavera.\r\nIl suo vestito chiaro, trapuntato di fiordalisi, è stretto in vita da un ramo di rosa. Il mantello rosso che porge alla dea è decorato con primule e rametti di mirto e si gonfia per effetto del soffio che giunge dal lato opposto.       ', 1, './images/OraDet.jpg', 0.65);
+(3, 'Ora', 'A destra, sulla costa frastagliata dell’isola accorre l’Ora della primavera.\r\nIl suo vestito chiaro, trapuntato di fiordalisi, è stretto in vita da un ramo di rosa. Il mantello rosso che porge alla dea è decorato con primule e rametti di mirto e si gonfia per effetto del soffio che giunge dal lato opposto.       ', 1, './images/OraDet.jpg', 0.65),
+(4, 'Battista Sforza', 'Il ritratto di Battista ha una colorazione chiara, con la pelle di un candore ceruleo come imponeva l\'etichetta del tempo: una pelle chiara era infatti segno di nobiltà, in contrapposizione all\'abbronzatura dei contadini che dovevano stare all\'aperto. La fronte è altissima, secondo la moda del tempo che imponeva un\'attaccatura molto alta (con i capelli che venivano rasati col fuoco di una candela), e l\'acconciatura elaborata, intessuta di panni e gioielli. Piero, al pari dei fiamminghi, si soffermò sulla brillantezza delle perle e delle gemme, restituendo, grazie all\'uso delle velature a olio, il \"lustro\" (riflesso) peculiare di ciascuna superficie, a seconda del materiale.', 2, './images/Battista.jpg', 0.65),
+(5, 'Federico da Montefeltro', 'Il ritratto di Federico è invece più naturalistico: la sua figura è possente, incorniciata dal forte rosso della veste e della berretta, che isola il profilo, mentre l\'ispida colotta dei capelli accentua gli effetti di massa volumetrica. I capelli sono irsuti, lo sguardo fiero e lontano. Il naso adunco e rotto era una cicatrice ottenuta durante un torneo in cui aveva perduto anche l\'occhio destro: per questo si faceva sempre ritrarre di profilo sinistro. La pelle è dipinta nei minimi particolari con distaccata oggettività, dalle rughe e ai piccoli nei, riprendendo i modi dell\'arte fiamminga. La corte di Federico dopotutto proprio negli anni sessanta del Quattrocento viveva l\'apice del suo splendore, con artisti italiani e fiamminghi che lavoravano fianco a fianco influenzandosi reciprocamente.', 2, './images/daMontefeltro.jpg', 0.65),
+(7, 'Arcangelo Gabriele', 'L’arcangelo Gabriele è ritratto con la posa classica, ossia al momento dell’atterraggio, con le ali ripiegate. Anziché avere le ali di pavone, il messaggero ha le ali di volatile autentiche. Infine, l’angelo benedice Maria con la mano destra, mentre con la sinistra porge il giglio, simbolo di castità e purezza.', 3, './images/Arcangelo.jpg', 0.65),
+(8, 'Maria', 'La Madonna si trova sotto a un portico, separato dall’Angelo con l’hortus conclusus, che allude al ventre della Vergine. Rispettando la tradizione iconografica cristiana, Maria indossa la veste di colore rosso, poiché simbolo della sua natura divina, e un manto di colore blu, segno della vita celeste. Infine, vediamo che la mano destra è appoggiata sul libro, per impedirne la chiusura, mentre la sinistra è sollevata, come accoglienza della chiamata divina.', 3, './images/Maria.jpg', 0.65);
 
 -- --------------------------------------------------------
 
@@ -594,7 +598,7 @@ ALTER TABLE `artworks`
 -- AUTO_INCREMENT per la tabella `details`
 --
 ALTER TABLE `details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Limiti per le tabelle scaricate
