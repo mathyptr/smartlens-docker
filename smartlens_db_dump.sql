@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Lug 22, 2024 alle 08:36
+-- Creato il: Lug 22, 2024 alle 18:46
 -- Versione del server: 10.4.22-MariaDB
 -- Versione PHP: 8.1.1
 
@@ -152,6 +152,25 @@ INSERT INTO `language_mapping` (`id`, `external_id`, `data`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `login`
+--
+
+CREATE TABLE `login` (
+  `id` int(11) NOT NULL,
+  `username` varchar(64) NOT NULL,
+  `password` varchar(64) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `login`
+--
+
+INSERT INTO `login` (`id`, `username`, `password`) VALUES
+(1, 'utente', '6279886fde090b3038f267098bcca771a6efa946');
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `net_details`
 --
 
@@ -204,6 +223,12 @@ ALTER TABLE `language_mapping`
   ADD KEY `datafkk` (`data`);
 
 --
+-- Indici per le tabelle `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indici per le tabelle `net_details`
 --
 ALTER TABLE `net_details`
@@ -224,6 +249,12 @@ ALTER TABLE `artworks`
 --
 ALTER TABLE `details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT per la tabella `login`
+--
+ALTER TABLE `login`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Limiti per le tabelle scaricate
