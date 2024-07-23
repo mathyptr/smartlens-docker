@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Lug 22, 2024 alle 18:46
+-- Creato il: Lug 23, 2024 alle 19:08
 -- Versione del server: 10.4.22-MariaDB
 -- Versione PHP: 8.1.1
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `smartlens`
 --
-CREATE DATABASE IF NOT EXISTS `smartlens` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `smartlens`;
 
 -- --------------------------------------------------------
 
@@ -29,6 +27,7 @@ USE `smartlens`;
 -- Struttura della tabella `artworks`
 --
 
+DROP TABLE IF EXISTS `artworks`;
 CREATE TABLE `artworks` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
@@ -51,6 +50,7 @@ INSERT INTO `artworks` (`id`, `title`, `author`, `imgsrc`) VALUES
 -- Struttura della tabella `details`
 --
 
+DROP TABLE IF EXISTS `details`;
 CREATE TABLE `details` (
   `id` int(11) NOT NULL,
   `title` varchar(200) NOT NULL,
@@ -65,12 +65,12 @@ CREATE TABLE `details` (
 
 INSERT INTO `details` (`id`, `title`, `artwork`, `imgsrc`, `confidence`) VALUES
 (1, 'Venere', 1, './images/VenereDet.jpg', 0.7),
-(2, 'Zefiro', 1, './images/ZefiroDet.jpg', 0.6),
+(2, 'Zefiro', 1, './images/ZefiroDet.jpg', 0.7),
 (3, 'Ora', 1, './images/OraDet.jpg', 0.8),
-(4, 'Battista Sforza', 2, './images/Battista.jpg', 0.65),
-(5, 'Federico da Montefeltro', 2, './images/daMontefeltro.jpg', 0.65),
-(6, 'Arcangelo Gabriele', 3, './images/Arcangelo.jpg', 0.65),
-(7, 'Maria', 3, './images/Maria.jpg', 0.65);
+(4, 'Battista Sforza', 2, './images/Battista.jpg', 0.6),
+(5, 'Federico da Montefeltro', 2, './images/daMontefeltro.jpg', 0.6),
+(6, 'Arcangelo Gabriele', 3, './images/Arcangelo.jpg', 0.6),
+(7, 'Maria', 3, './images/Maria.jpg', 0.6);
 
 -- --------------------------------------------------------
 
@@ -78,6 +78,7 @@ INSERT INTO `details` (`id`, `title`, `artwork`, `imgsrc`, `confidence`) VALUES
 -- Struttura della tabella `language`
 --
 
+DROP TABLE IF EXISTS `language`;
 CREATE TABLE `language` (
   `id` int(11) NOT NULL,
   `data` text NOT NULL,
@@ -116,6 +117,7 @@ INSERT INTO `language` (`id`, `data`, `language`) VALUES
 -- Struttura della tabella `language_mapping`
 --
 
+DROP TABLE IF EXISTS `language_mapping`;
 CREATE TABLE `language_mapping` (
   `id` int(11) NOT NULL,
   `external_id` int(11) NOT NULL,
@@ -155,6 +157,7 @@ INSERT INTO `language_mapping` (`id`, `external_id`, `data`, `type`) VALUES
 -- Struttura della tabella `login`
 --
 
+DROP TABLE IF EXISTS `login`;
 CREATE TABLE `login` (
   `id` int(11) NOT NULL,
   `username` varchar(64) NOT NULL,
@@ -174,6 +177,7 @@ INSERT INTO `login` (`id`, `username`, `password`) VALUES
 -- Struttura della tabella `net_details`
 --
 
+DROP TABLE IF EXISTS `net_details`;
 CREATE TABLE `net_details` (
   `id` int(11) NOT NULL,
   `id_net` int(11) NOT NULL,
@@ -186,11 +190,12 @@ CREATE TABLE `net_details` (
 
 INSERT INTO `net_details` (`id`, `id_net`, `confidence`) VALUES
 (1, 1, 0.7),
-(2, 2, 0.6),
+(2, 2, 0.7),
 (3, 3, 0.8),
-(4, 4, 0.65),
-(5, 5, 0.65),
-(6, 6, 0.65);
+(4, 4, 0.6),
+(5, 5, 0.6),
+(6, 6, 0.6),
+(7, 7, 0.6);
 
 --
 -- Indici per le tabelle scaricate
