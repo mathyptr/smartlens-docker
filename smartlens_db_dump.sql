@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Lug 23, 2024 alle 19:08
+-- Creato il: Lug 25, 2024 alle 09:57
 -- Versione del server: 10.4.22-MariaDB
 -- Versione PHP: 8.1.1
 
@@ -189,13 +189,13 @@ CREATE TABLE `net_details` (
 --
 
 INSERT INTO `net_details` (`id`, `id_net`, `confidence`) VALUES
-(1, 1, 0.7),
-(2, 2, 0.7),
-(3, 3, 0.8),
-(4, 4, 0.6),
-(5, 5, 0.6),
-(6, 6, 0.6),
-(7, 7, 0.6);
+(1, 1, 0),
+(2, 2, 0),
+(3, 3, 0),
+(4, 4, 0.8),
+(5, 5, 0.8),
+(6, 6, 0.8),
+(7, 7, 0.8);
 
 --
 -- Indici per le tabelle scaricate
