@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Lug 25, 2024 alle 09:57
+-- Creato il: Ago 06, 2024 alle 15:09
 -- Versione del server: 10.4.22-MariaDB
 -- Versione PHP: 8.1.1
 
@@ -64,13 +64,13 @@ CREATE TABLE `details` (
 --
 
 INSERT INTO `details` (`id`, `title`, `artwork`, `imgsrc`, `confidence`) VALUES
-(1, 'Venere', 1, './images/VenereDet.jpg', 0.7),
-(2, 'Zefiro', 1, './images/ZefiroDet.jpg', 0.7),
-(3, 'Ora', 1, './images/OraDet.jpg', 0.8),
-(4, 'Battista Sforza', 2, './images/Battista.jpg', 0.6),
-(5, 'Federico da Montefeltro', 2, './images/daMontefeltro.jpg', 0.6),
-(6, 'Arcangelo Gabriele', 3, './images/Arcangelo.jpg', 0.6),
-(7, 'Maria', 3, './images/Maria.jpg', 0.6);
+(1, 'Venere', 1, './images/VenereDet.jpg', 0.8),
+(2, 'Zefiro', 1, './images/ZefiroDet.jpg', 0.65),
+(3, 'Ora', 1, './images/OraDet.jpg', 0.7),
+(4, 'Battista Sforza', 2, './images/Battista.jpg', 0.8),
+(5, 'Federico da Montefeltro', 2, './images/daMontefeltro.jpg', 0.9),
+(6, 'Arcangelo Gabriele', 3, './images/Arcangelo.jpg', 0.7),
+(7, 'Maria', 3, './images/Maria.jpg', 0.7);
 
 -- --------------------------------------------------------
 
@@ -189,13 +189,13 @@ CREATE TABLE `net_details` (
 --
 
 INSERT INTO `net_details` (`id`, `id_net`, `confidence`) VALUES
-(1, 1, 0),
-(2, 2, 0),
-(3, 3, 0),
+(1, 1, 0.8),
+(2, 2, 0.65),
+(3, 3, 0.7),
 (4, 4, 0.8),
-(5, 5, 0.8),
-(6, 6, 0.8),
-(7, 7, 0.8);
+(5, 5, 0.9),
+(6, 6, 0.7),
+(7, 7, 0.7);
 
 --
 -- Indici per le tabelle scaricate
