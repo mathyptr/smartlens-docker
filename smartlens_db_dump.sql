@@ -27,12 +27,13 @@ SET time_zone = "+00:00";
 -- Struttura della tabella `artworks`
 --
 
+DROP TABLE IF EXISTS `details`;
 DROP TABLE IF EXISTS `artworks`;
 CREATE TABLE `artworks` (
   `id` int(11) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `author` varchar(100) NOT NULL,
-  `imgsrc` varchar(200) DEFAULT NULL
+  `title` varchar(100) DEFAULT '-',
+  `author` varchar(100) DEFAULT '-',
+  `imgsrc` varchar(200) DEFAULT '-'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -49,14 +50,12 @@ INSERT INTO `artworks` (`id`, `title`, `author`, `imgsrc`) VALUES
 --
 -- Struttura della tabella `details`
 --
-
-DROP TABLE IF EXISTS `details`;
 CREATE TABLE `details` (
   `id` int(11) NOT NULL,
-  `title` varchar(200) NOT NULL,
+  `title` varchar(200) DEFAULT '-',
   `artwork` int(11) NOT NULL,
   `imgsrc` varchar(200) DEFAULT NULL,
-  `confidence` float DEFAULT NULL
+  `confidence` float DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -78,10 +77,12 @@ INSERT INTO `details` (`id`, `title`, `artwork`, `imgsrc`, `confidence`) VALUES
 -- Struttura della tabella `language`
 --
 
+
+DROP TABLE IF EXISTS `language_mapping`;
 DROP TABLE IF EXISTS `language`;
 CREATE TABLE `language` (
   `id` int(11) NOT NULL,
-  `data` text NOT NULL,
+  `data` text DEFAULT '-',
   `language` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -117,7 +118,6 @@ INSERT INTO `language` (`id`, `data`, `language`) VALUES
 -- Struttura della tabella `language_mapping`
 --
 
-DROP TABLE IF EXISTS `language_mapping`;
 CREATE TABLE `language_mapping` (
   `id` int(11) NOT NULL,
   `external_id` int(11) NOT NULL,
@@ -282,7 +282,8 @@ ALTER TABLE `login`
 -- Limiti per la tabella `details`
 --
 ALTER TABLE `details`
-  ADD CONSTRAINT `detail_fk` FOREIGN KEY (`artwork`) REFERENCES `artworks` (`id`);
+  ADD CONSTRAINT `detail_fk` FOREIGN KEY (`artwork`) REFERENCES `artworks` (`id`)
+  ON DELETE CASCADE;
 
 --
 -- Limiti per la tabella `language_mapping`
