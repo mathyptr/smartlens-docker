@@ -82,7 +82,7 @@ DROP TABLE IF EXISTS `language_mapping`;
 DROP TABLE IF EXISTS `language`;
 CREATE TABLE `language` (
   `id` int(11) NOT NULL,
-  `data` text DEFAULT '-',
+  `data` text,
   `language` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
